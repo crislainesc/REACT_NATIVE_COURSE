@@ -11,10 +11,10 @@ export default function App() {
   }
 
   function addGoalHandler() {
-    setGoals(prevState => (
-      [...prevState, enteredGoalText]
+    setGoals(currentGoals => (
+      [...currentGoals, enteredGoalText]
     ))
-    console.log(goals)
+    setEnteredGoalText('')
   }
 
   return (
@@ -22,11 +22,15 @@ export default function App() {
       <View style={styles.inputContainer}>
         <TextInput style={styles.textInput} placeholder='Your course goal!'
           onChangeText={goalInputHandler}
+          value={enteredGoalText}
         />
         <Button title='Add Goal' onPress={addGoalHandler}/>
       </View>
       <View style={styles.goalsContainer}>
         <Text>List of goals...</Text>
+        {goals.map((goal) => (
+          <Text key={goal}>{goal}</Text>
+        ))}
       </View>
     </View>
 
