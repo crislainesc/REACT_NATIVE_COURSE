@@ -24,12 +24,14 @@ export default function App() {
           onChangeText={goalInputHandler}
           value={enteredGoalText}
         />
-        <Button title='Add Goal' onPress={addGoalHandler}/>
+        <Button title='Add Goal' onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
         <Text>List of goals...</Text>
         {goals.map((goal) => (
-          <Text key={goal}>{goal}</Text>
+          <View key={goal} style={styles.goalItem}>
+            <Text style={styles.goalText}>{goal}</Text>
+          </View>
         ))}
       </View>
     </View>
@@ -64,5 +66,16 @@ const styles = StyleSheet.create({
 
   goalsContainer: {
     flex: 4,
+  },
+
+  goalItem: {
+    margin: 8,
+    padding: 8,
+    borderRadius: 8,
+    backgroundColor: '#5e0acc',
+  },
+  
+  goalText: {
+    color: 'white'
   }
 })
