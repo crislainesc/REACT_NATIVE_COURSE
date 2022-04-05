@@ -1,12 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View>
+        <Text>Another piece of text!</Text>
+      </View>
+      <Text>Hello World!</Text>
+      <Button title='TAP ME'/>
     </View>
+
   );
 }
 
