@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 
 function GameScreen() {
 	return (
@@ -19,6 +19,6 @@ export default GameScreen;
 const styles = StyleSheet.create({
 	screen: {
 		flex: 1,
-		padding: 12,
+		padding: 24,
 	},
 });
