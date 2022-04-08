@@ -1,5 +1,5 @@
 import { FlatList, View } from 'react-native';
-import CategoryGridTitle from '../components/CategoryGridTItle';
+import CategoryGridTitle from '../components/CategoryGridTitle';
 
 import { CATEGORIES } from '../data/dummy_data';
 
@@ -13,6 +13,7 @@ function CategoriesScreen(props) {
 			data={CATEGORIES}
 			keyExtractor={(item) => item.id}
 			renderItem={renderCategoryItem}
+			numColumns={2}
 		/>
 	);
 }
