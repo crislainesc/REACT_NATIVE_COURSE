@@ -32,7 +32,7 @@ function DrawerNavigator() {
 				options={{
 					title: 'All Categories',
 					drawerIcon: ({ color, size }) => (
-						<Ionicons name='star' color={color} size={size} />
+						<Ionicons name='list' color={color} size={size} />
 					),
 				}}
 			/>
