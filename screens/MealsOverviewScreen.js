@@ -1,14 +1,24 @@
+import { useLayoutEffect } from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
+
 import MealItem from '../components/MealItem';
 
-import { MEALS } from '../data/dummy_data';
+import { MEALS, CATEGORIES } from '../data/dummy_data';
 
-function MealsOverviewScreen({ route }) {
+function MealsOverviewScreen({ route, navigation }) {
 	const { categoryId } = route.params;
 
 	const displayedMeals = MEALS.filter(
 		(mealItem) => mealItem.categoryIds.indexOf(categoryId) >= 0
 	);
+
+	useLayoutEffect(() => {
+		const categoryTitle = CATEGORIES.find(
+			(category) => category.id === categoryId
+		).title;
+
+		navigation.setOptions({ title: categoryTitle });
+	}, [categoryId, navigation]);
 
 	function renderMealItem(itemData) {
 		const item = itemData.item;
@@ -18,7 +28,7 @@ function MealsOverviewScreen({ route }) {
 			imageUrl: item.imageUrl,
 			duration: item.duration,
 			complexity: item.complexity,
-			affordability: item.affordability,   
+			affordability: item.affordability,
 		};
 
 		return <MealItem {...mealItemProps} />;
