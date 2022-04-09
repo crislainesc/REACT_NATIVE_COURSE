@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { getFormattedDate } from '../../utils/date';
+import { getFormattedDate } from '../../utils/getFormattedDate';
 
 import { GlobalStyles } from '../../styles';
 
