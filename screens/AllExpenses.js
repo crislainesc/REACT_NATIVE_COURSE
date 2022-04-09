@@ -9,7 +9,13 @@ function AllExpenses() {
 
 	const { expenses } = expensesContext;
 
-	return <ExpensesOutput expenses={expenses} expensesPeriod='Total' />;
+	return (
+		<ExpensesOutput
+			expenses={expenses}
+			expensesPeriod='Total'
+			fallbackText='No expenses registered found.'
+		/>
+	);
 }
 
 export default AllExpenses;
