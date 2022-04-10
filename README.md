@@ -15,3 +15,4 @@ This repository contains the source code of the React Native course of the React
 - [07 - App-wide State Management with Redux & Context API](https://github.com/crislainesc/react-native-course/tree/07-redux-context)
 - [08 - Time To Practice - The Expense Tracker App](https://github.com/crislainesc/react-native-course/tree/08-practice-app)
 - [09 - Handling User Input](https://github.com/crislainesc/react-native-course/tree/09-user-input)
+- [10 - Sending Http Requests](https://github.com/crislainesc/react-native-course/tree/10-http-requests)
