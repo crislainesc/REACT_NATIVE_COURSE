@@ -7,8 +7,8 @@ import { AuthContext } from '../store/auth-context';
 function WelcomeScreen() {
   const [fetchedMessage, setFetchedMesssage] = useState('');
 
-  const authCtx = useContext(AuthContext);
-  const token = authCtx.token;
+  const authContext = useContext(AuthContext);
+  const token = authContext.token;
 
   useEffect(() => {
     axios
