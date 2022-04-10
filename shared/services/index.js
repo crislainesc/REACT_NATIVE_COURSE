@@ -1,3 +1,3 @@
-import { storeExpense } from './expenses';
+import { storeExpense, fetchExpenses } from './expenses';
 
-export { storeExpense };
+export { storeExpense, fetchExpenses };
