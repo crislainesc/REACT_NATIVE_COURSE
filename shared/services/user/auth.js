@@ -4,10 +4,18 @@ import instance from '../axios.config';
 
 const API_KEY = '[API_KEY]';
 
-export async function createUser(email, password) {
-	const response = await instance.post(`signUp?key=${API_KEY}`, {
-		email,
-		password,
+async function authenticate(mode, email, password) {
+	const response = await instance.post(`:${mode}?key=${API_KEY}`, {
+		email: email,
+		password: password,
 		returnSecureToken: true,
 	});
+}
+
+export async function createUser(email, password) {
+	await authenticate('signUp', email, password);
+}
+
+export async function login(email, password) {
+	await authenticate('signInWithPassword', email, password);
 }
