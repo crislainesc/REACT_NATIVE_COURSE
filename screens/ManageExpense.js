@@ -6,7 +6,7 @@ import ExpenseForm from '../components/ManageExpense/ExpenseForm';
 
 import { ExpensesContext } from '../store/expenses-context';
 
-import { storeExpense } from '../shared/services';
+import { deleteExpense, storeExpense, updateExpense } from '../shared/services';
 
 import { GlobalStyles } from '../styles';
 
@@ -26,7 +26,8 @@ function ManageExpense({ route, navigation }) {
 		});
 	}, [isEditing, navigation]);
 
-	function deleteExpenseHandler() {
+	async function deleteExpenseHandler() {
+		await deleteExpense(editedExpenseId);
 		expensesContext.deleteExpense(editedExpenseId);
 		navigation.goBack();
 	}
@@ -35,12 +36,13 @@ function ManageExpense({ route, navigation }) {
 		navigation.goBack();
 	}
 
-	function confirmHandler(expenseData) {
+	async function confirmHandler(expenseData) {
 		if (isEditing) {
 			expensesContext.updateExpense(editedExpenseId, expenseData);
+			await updateExpense(editedExpenseId, expenseData);
 		} else {
-			storeExpense(expenseData);
-			expensesContext.addExpense(expenseData);
+			const id = await storeExpense(expenseData);
+			expensesContext.addExpense({ ...expenseData, id: id });
 		}
 		navigation.goBack();
 	}
