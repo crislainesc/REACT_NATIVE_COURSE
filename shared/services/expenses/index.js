@@ -1,7 +1,9 @@
 import instance from '../axios.config';
 
-export function storeExpense(expenseData) {
-	instance.post('/expenses.json', expenseData);
+export async function storeExpense(expenseData) {
+	const response = await instance.post('/expenses.json', expenseData);
+	const id = response.data.name;
+	return id;
 }
 
 export async function fetchExpenses() {
@@ -21,4 +23,12 @@ export async function fetchExpenses() {
 	}
 
 	return expenses;
+}
+
+export function updateExpense(id, expenseData) {
+	return instance.put(`/expenses/${id}.json`, expenseData);
+}
+
+export function deleteExpense(id) {
+	return instance.delete(`/expenses/${id}.json`);
 }
