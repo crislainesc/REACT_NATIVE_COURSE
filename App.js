@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
-import { Colors } from './constants/styles';
+import { Colors } from './shared/constants/styles';
 
 const Stack = createNativeStackNavigator();
 
