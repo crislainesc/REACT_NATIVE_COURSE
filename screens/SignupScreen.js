@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Alert } from 'react-native';
 
 import AuthContent from '../components/Auth/AuthContent';
 import LoadingOverlay from '../components/UI/LoadingOverlay';
@@ -10,7 +11,14 @@ function SignupScreen() {
 
 	async function singUpHandler({ email, password }) {
 		setIsAuthenticating(true);
-		await createUser(email, password);
+		try {
+			await createUser(email, password);
+		} catch (error) {
+			Alert.alert(
+				'Authentication failed!',
+				'Could not create user. Please check your input or try again later!'
+			);
+		}
 		setIsAuthenticating(false);
 	}
 
