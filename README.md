@@ -16,3 +16,7 @@ This repository contains the source code of the React Native course of the React
 - [08 - Time To Practice - The Expense Tracker App](https://github.com/crislainesc/react-native-course/tree/08-practice-app)
 - [09 - Handling User Input](https://github.com/crislainesc/react-native-course/tree/09-user-input)
 - [10 - Sending Http Requests](https://github.com/crislainesc/react-native-course/tree/10-http-requests)
+- [11 - User Authentication](https://github.com/crislainesc/react-native-course/tree/11-auth)
+- [12 - Using Native Device Features](https://github.com/crislainesc/react-native-course/tree/12-native-features)
+- [13 - Building React Native Apps Without Expo](https://github.com/crislainesc/react-native-course/tree/13-no-expo)
+- [14 - Publishing React Native Apps](https://github.com/crislainesc/react-native-course/tree/14-publish)
